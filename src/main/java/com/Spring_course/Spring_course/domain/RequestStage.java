@@ -22,7 +22,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter @Setter
+
 @AllArgsConstructor @NoArgsConstructor
 
 
@@ -50,6 +50,54 @@ public class RequestStage {
 	@ManyToOne
 	@JoinColumn(name = "owner_id",nullable = false, insertable = false, updatable = false)
 	private User ower;
+
+	public Long getID() {
+		return ID;
+	}
+
+	public void setID(Long iD) {
+		ID = iD;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Date getRealizationDate() {
+		return realizationDate;
+	}
+
+	public void setRealizationDate(Date realizationDate) {
+		this.realizationDate = realizationDate;
+	}
+
+	public RequestState getState() {
+		return state;
+	}
+
+	public void setState(RequestState state) {
+		this.state = state;
+	}
+
+	public Request getRequest() {
+		return request;
+	}
+
+	public void setRequest(Request request) {
+		this.request = request;
+	}
+
+	public User getOwer() {
+		return ower;
+	}
+
+	public void setOwer(User ower) {
+		this.ower = ower;
+	}
 	
 	
 	

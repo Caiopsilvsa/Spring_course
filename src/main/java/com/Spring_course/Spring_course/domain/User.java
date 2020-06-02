@@ -21,8 +21,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter @Setter
-@AllArgsConstructor @NoArgsConstructor
+
+@NoArgsConstructor
 
 
 @Entity
@@ -35,6 +35,71 @@ public class User {
 	@Column(nullable = false)
 	String name;
 	
+	public User(Long id, String name, String email, String password, Role role) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		Password = password;
+		this.role = role;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return Password;
+	}
+
+	public void setPassword(String password) {
+		Password = password;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public List<Request> getRequests() {
+		return requests;
+	}
+
+	public void setRequests(List<Request> requests) {
+		this.requests = requests;
+	}
+
+	public List<RequestStage> getStages() {
+		return stages;
+	}
+
+	public void setStages(List<RequestStage> stages) {
+		this.stages = stages;
+	}
+
 	@Column(nullable = false)
 	String email;
 	

@@ -24,7 +24,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter @Setter
+
 @AllArgsConstructor  @NoArgsConstructor
 
 
@@ -41,7 +41,63 @@ public class Request {
 	  @Column (columnDefinition = "text")
 	  private String description;
       
-	  @Column (name = "creation_date", nullable = false)
+	  public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getSubject() {
+		return subject;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Date getDateCreation() {
+		return dateCreation;
+	}
+
+	public void setDateCreation(Date dateCreation) {
+		this.dateCreation = dateCreation;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public List<RequestStage> getStages() {
+		return stages;
+	}
+
+	public void setStages(List<RequestStage> stages) {
+		this.stages = stages;
+	}
+
+	public RequestState getState() {
+		return state;
+	}
+
+	public void setState(RequestState state) {
+		this.state = state;
+	}
+
+	@Column (name = "creation_date", nullable = false)
 	  @Temporal(TemporalType.TIMESTAMP)
 	  private Date dateCreation;
       
@@ -54,7 +110,13 @@ public class Request {
       List <RequestStage> stages = new ArrayList<>();
       
 	  @Enumerated(EnumType.STRING)
-      RequestState state;	
-     
+      RequestState state;
+
+	public void setDateCreation2(Date dateCreation2) {
+		this.dateCreation = dateCreation2;
+		
+	}
+
+	
 }
 
